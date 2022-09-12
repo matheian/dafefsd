@@ -22,4 +22,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler"
   spec.add_runtime_dependency "webrick", "~> 1.7"
+
+  spec.add_development_dependency "jekyll-last-modified-at"
 end

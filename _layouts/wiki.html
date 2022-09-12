@@ -14,6 +14,9 @@ layout: default
       <a class="page-link" href="https://github.com/{{ site.repository }}/issues/new?title={{ document_name | url_encode }}/" target="_blank">토론</a>
       <a class="page-link" href="https://github.com/{{ site.repository }}/delete/{{ site.branch }}/{{ wiki_dir }}/{{ document_name }}.md" target="_blank">삭제</a>
     </div>
+    <p class="post-meta">
+      최근 수정 시각: {{ page.last_modified_at }}
+    </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody" id="content">
