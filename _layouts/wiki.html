@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{%- assign document_name = page.id | remove: '/wiki/' -%}
+{%- assign branch = site.branch | default: 'master' -%}
+{%- assign wiki_dir = site.wiki.directory | default: '_wiki' -%}
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <div class="trigger">
+      <a class="page-link" href="https://github.com/{{ site.repository }}/edit/{{ site.branch }}/{{ wiki_dir }}/{{ document_name }}.md" target="_blank">편집</a>
+      <a class="page-link" href="https://github.com/{{ site.repository }}/commits/{{ site.branch }}/{{ wiki_dir }}/{{ document_name }}.md" target="_blank">역사</a>
+      <a class="page-link" href="https://github.com/{{ site.repository }}/issues/new?title={{ document_name | url_encode }}/" target="_blank">토론</a>
+      <a class="page-link" href="https://github.com/{{ site.repository }}/delete/{{ site.branch }}/{{ wiki_dir }}/{{ document_name }}.md" target="_blank">삭제</a>
+    </div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody" id="content">
+    {{ content }}
+  </div>
+
+  {%- include disqus_comments.html -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
